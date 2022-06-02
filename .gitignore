@@ -1,0 +1,6 @@
+.DS_Store
+bin/
+obj/
+GED.csproj
+.vs/
+GED.sln
