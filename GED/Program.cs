@@ -72,6 +72,7 @@ static class program {
                 httpclient_get_html(uri);
                 Thread.Sleep(3600000);
                 on = checking();
+                Console.WriteLine("checked");
             } while(!on);
 
     } catch(Exception ex) {
