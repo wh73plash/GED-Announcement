@@ -6,31 +6,31 @@ static class program {
     static string uri = "https://www.goe.go.kr/home/bbs/bbsList.do?menuId=100000000000063&menuInit=2%2C3%2C3%2C0%2C0&searchTab=&searchCategory=&bbsId=&bbsMasterId=BBSMSTR_000000000112&pageIndex=1&schKey=TITLE&schVal=" + "검정고시+시행계획+공고";
     static string contents = string.Empty;
 
-    static private void process_function(object sender, DownloadStringCompletedEventArgs e) {
-        try {
-            string html = e.Result;
-            contents = html;
-            Console.WriteLine("-----start-----\n\n" + contents + "-----finish-----\n\n");
-        } catch(Exception ex) {
-            Console.WriteLine(ex.Message + "\n" + ex.StackTrace);
-        }
-        return;
-    }
+    //static private void process_function(object sender, DownloadStringCompletedEventArgs e) {
+    //    try {
+    //        string html = e.Result;
+    //        contents = html;
+    //        Console.WriteLine("-----start-----\n\n" + contents + "-----finish-----\n\n");
+    //    } catch(Exception ex) {
+    //        Console.WriteLine(ex.Message + "\n" + ex.StackTrace);
+    //    }
+    //    return;
+    //}
 
-    static private void webclient_get_html(string buffer_uri) {
-        try {
-            do {
-                WebClient wc = new WebClient();
-                wc.Encoding = Encoding.UTF8;
-                wc.DownloadStringAsync(new Uri(buffer_uri));
-                wc.DownloadStringCompleted += process_function;
-                Thread.Sleep(500);
-            } while(contents == String.Empty);
-        } catch(Exception ex) {
-            Console.WriteLine(ex.Message + "\n" + ex.StackTrace);
-        }
-        return;
-    }
+    //static private void webclient_get_html(string buffer_uri) {
+    //    try {
+    //        do {
+    //            WebClient wc = new WebClient();
+    //            wc.Encoding = Encoding.UTF8;
+    //            wc.DownloadStringAsync(new Uri(buffer_uri));
+    //            wc.DownloadStringCompleted += process_function;
+    //            Thread.Sleep(500);
+    //        } while(contents == String.Empty);
+    //    } catch(Exception ex) {
+    //        Console.WriteLine(ex.Message + "\n" + ex.StackTrace);
+    //    }
+    //    return;
+    //}
 
     static private async void httpclient_get_html(string buffer_uri) {
         try {
