@@ -70,7 +70,7 @@ static class program {
         try {
             do {
                 httpclient_get_html(uri);
-                Thread.Sleep(3600000);
+                Thread.Sleep(5000);
                 on = checking();
                 Console.WriteLine("checked");
             } while(!on);
